@@ -1,0 +1,32 @@
+.text_color{
+    font-size: 72px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+  }
+  
+  .strong{
+    font-size: 1.3rem;
+    letter-spacing: 0.01rem;
+    word-spacing: 0.02rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+  }
+
+  .small{
+    font-size: 0.99rem;
+    letter-spacing: 0.01rem;
+    word-spacing: 0.02rem;
+    line-height: 1.5rem;
+  }
+
+  .email{
+    font-size: 1.1rem;
+    letter-spacing: 0.01rem;
+    word-spacing: 0.02rem;
+  }
