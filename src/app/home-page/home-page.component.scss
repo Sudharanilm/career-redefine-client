@@ -1,0 +1,154 @@
+/* home.component.css */
+
+
+/* Define keyframes for text color animation */
+
+@keyframes colorChange {
+    0% {
+        color: #75b469;
+        // background-color: #75b469;
+        /* Green */
+    }
+    25% {
+        color: #efce74;
+        // background-color: #efce74;
+        /* Yellow */
+    }
+    50% {
+        color: #fb833f;
+        // background-color: #fb833f;
+        /* Orange */
+    }
+    75% {
+        color: #fb11e0;
+        // background-color: #fb11e0;
+        /* Pink */
+    }
+    100% {
+        color: #75b469;
+        // background-color: #75b469;
+        /* Green */
+    }
+}
+
+
+/* Hover animation for text */
+
+// .hover-text:hover {
+//     animation: colorChange 2s ease-in-out infinite;
+// }
+
+/* General text color transition */
+
+.hover-text {
+    transition: color 0.3s ease;
+    animation: colorChange 2s ease-in-out infinite;
+}
+
+.hover-button {
+    transition: color 0.3s ease;
+    animation: colorChange 2s ease-in-out infinite;
+    font-weight: 500;
+    font-family: Roboto;
+}
+
+
+/* Optional: Style Angular Material Button on hover */
+
+// .mat-raised-button:hover {
+//     background-color: #ff4081 !important;
+//     transition: color 0.3s ease;
+//     animation: colorChange 2s ease-in-out infinite;
+//     /* Example hover color */
+// }
+
+/* Styling the container */
+
+.home_section {
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    .card-body {
+        padding: 1.25rem;
+    }
+    .career_sub_wellcome {
+        font-size: 40px;
+        line-height: 2.01rem;
+        word-spacing: 0.01rem;
+        font-family: Roboto;
+        font-weight: 600;
+    }
+    .career_sub_title {
+        font-size: 22px;
+        line-height: 3rem;
+        word-spacing: 0.01rem;
+        font-family: Roboto;
+        font-weight: 500;
+    }
+    .career_sub_heading p {
+        font-size: 20px;
+        line-height: 2rem;
+        letter-spacing: 0.01rem;
+        word-spacing: 0.01rem;
+        font-family: Roboto;
+        font-weight: 400;
+        padding: 0rem 2rem;
+    }
+}
+
+.ourstory_section {
+    padding: 2rem 0rem;
+    .our_story {
+        font-size: 18px;
+        line-height: 0.01rem;
+        word-spacing: 0.01rem;
+        font-family: Roboto;
+        font-weight: 500;
+    }
+    .our_story_titile {
+        font-size: 25px;
+        line-height: 3rem;
+        word-spacing: 0.01rem;
+        font-family: Roboto;
+        font-weight: 600;
+        padding-bottom: 0.8rem;
+    }
+    .card_1 {
+        padding: 0.5rem 1.5rem;
+        margin: 0.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 10px 0px lightblue;
+    }
+    .title_heading {
+        font-size: 22px;
+        line-height: 1.8rem;
+        word-spacing: 0.01rem;
+        font-family: Roboto;
+        font-weight: 500;
+        // padding: 0rem 2rem;
+    }
+    .title_description {
+        font-size: 18px;
+        line-height: 2rem;
+        word-spacing: 0.01rem;
+        font-family: Roboto;
+        font-weight: 400;
+        // padding: 0rem 2rem;
+    }
+    .image {
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem; // height: 100%;
+    }
+    .card_1:hover {
+        box-shadow: 0px 0px 16px 0px lightblue;
+        .image {
+            background-position: center;
+            width: 80%;
+            transition: 0.5s ease;
+            padding-bottom: 1rem;
+            margin-left: 2.5rem;
+            margin-bottom: 1rem;
+            // box-shadow: 1px 0px 20px 10px lightblue;
+        }
+    }
+}
