@@ -1,110 +1,144 @@
-<!-- app.component.html -->
+<div class="bg_img col-12 bg-white">
+    <!-- <div style="background: rgba(0,0,0,0.5);"> -->
+    <div class="left_img">
+        <div class="img-overly"> </div>
+        <div class="container d-flex" style="margin-top: -45rem;">
+            <div class="col-md-6">
+                <div class="">
+                    <p class="titleheading">Welcome to Career Redefine: Your Partner in Career Transformation</p>
 
-<!-- <app-header></app-header> -->
-
-<div class="col-12 bg-white">
-
-    <div class="">
-        <div class="container home_section">
-            <div class="col-md-12">
-                <!-- Angular Material Toolbar with hover effect -->
-                <div class="container text-center">
-                    <div class="">
-                        <p class="career_sub_wellcome hover-text">Welcome to Career Redefine</p>
-                        <p class="career_sub_title text-muted">Your Partner in Career Transformation</p>
-
-                    </div>
-                    <div class="career_sub_heading">
-                        <p class="">At Career Redefine, we understand that your career is more than just a job. It's a journey of growth, evolution, and opportunity. Whether you're an executive leader seeking a new challenge, a mid-career professional looking to
-                            transition, or a recent graduate embarking on your career path, we're here to guide you every step of the way.
-                        </p>
-                    </div>
-                    <button mat-raised-button class="hover-button">Get Started</button>
+                    <p class="titledescription text-start">
+                        At Career Redefine, we understand that your career is more than just a job. It's a journey of
+                        growth, evolution, and opportunity. Whether you're an executive leader seeking a new challenge,
+                        a
+                        mid-career professional looking to transition, or a recent graduate embarking on your career
+                        path,
+                        we're here to guide you every step of the way.</p>
                 </div>
-                <div fxLayoutAlign="center center">
-                    <div class="container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NX5sH89Q2ew?si=Hvgk0YqluhH4hAZd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
+                <button class="hover-button d-flex text-center rounded-2 px-4 btn btn-lg bg-primary">
+                    <a href="" class="text-white" style="text-decoration: none; font-size: 1.1rem; font-weight: 500;"
+                   [routerLink]="['/']" fragment="courses"
+                        >Get Started</a>
+                    <mat-icon class="text-white ms-1">arrow_right_alt</mat-icon>
+                </button>
+            </div>
 
+
+            <!-- <div class="col-md-6">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HCxoi4BdKM0?si=PdmfBwiQGTsEG9Es"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div> -->
+        </div>
+    </div>
+
+</div>
+
+
+<!-- <section class="bg-light" id="courses">
+    <div class="container mt-4">
+        <div class="row row-cols-3 g-4 py-4">
+
+            <div class="col border rounded-4 bg-white position-relative" *ngFor="let course in coursesList">
+                <div class="ribbon">Most Trending</div>
+            
+                <div class="p-3">
+                    <span>
+                        <img class="img-fluid" src="../../assets/python_logo.png" alt="">
+                    </span>
+                    <p class="fs-4 fw-bold lh-base">{{course?.title}}</p>
+                    <p>{{course?.description}}
+                    </p>
+                    <div fxLayoutAlign="space-between" class="d-flex">
+                        <div>
+                            <button class="btn btn-md bg-primary text-white">Enroll now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="bg-light" id="courses">
+    <div class="container py-4">
+        <!-- Section Heading -->
+        <div class="text-center pt-4 mb-4">
+            <h2 class="fs-2 fw-bold lh-base">Explore Our Courses</h2>
+            <p class="fs-4 lh-base">"The future belongs to those who learn more skills and combine them in creative
+                ways."</p>
+        </div>
+
+        <!-- Course Cards -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 mb-3" *ngFor="let course of coursesList; let i = index">
+                    <div class="card course-card position-relative shadow-sm h-100 d-flex flex-column">
+                        <!-- Show ribbon only for trending and popular courses -->
+                        <div class="ribbon bg-warning text-white" *ngIf="i == 0 || i == 2">Most Trending</div>
+                        <div class="ribbon bg-primary text-white" *ngIf="i == 1 || i == 3">Most Popular</div>
+
+                        <img *ngIf="i == 0" class="card-img-top" style="height: 22.5vh;"
+                            src="../../assets/web_development.jpg" alt="Web Development">
+                        <img *ngIf="i == 1" class="card-img-top" style="height: 22.5vh;"
+                            src="../../assets/data_science.png" alt="Data Science">
+                        <img *ngIf="i == 2" class="card-img-top img-fluid" src="../../assets/Ai_mlearning.jpg"
+                            alt="AI & ML">
+                        <img *ngIf="i == 3" class="card-img-top" src="../../assets/python_2.jpg" alt="Python">
+                        <hr class="my-0">
+                        <div class="card-body flex-grow-1">
+                            <h5 class="fs-4 lh-base fw-bold">{{ course?.title }}</h5>
+                            <p class="fs-6 lh-base">{{ course?.description }}</p>
+                        </div>
+
+                        <div class="text-center pb-3">
+                            <button class="w-75 btn border border-primary btn-md btn-hover-blue"
+                                (click)="openEnrollDialog()">Enroll Now</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
 
-        <div class="container-fluid ourstory_section text-center bg-light">
-            <p class="our_story text-primary">Our Story</p>
-            <p class="our_story_titile">Join Us on the Journey</p>
 
 
-            <div class="container">
-                <div class="col-sm-12 row" fxLayoutAlign="space-between center">
-                    <div class="col-sm bg-white card_1" fxLayoutAlign="center center">
-                        <!-- <div> -->
-                        <div class="image">
-                            <img src=" ../../assets/career_redefine_ourstory_1.png " class="img-fluid " alt=" ">
-                        </div>
 
+
+
+        <!-- <div class="row row-cols-1 row-cols-sm-4 g-4 py-2 mx-2">
+            <div class="col border rounded-4 bg-white position-relative" *ngFor="let course of coursesList; let i=index">
+
+                <div class="ribbon"*ngIf="i==0 || i==2 ">Most Trending</div>
+                <div class="ribbon" *ngIf="i==1 ||i==3">Most Popular</div>
+
+                <div class="p-2">
+                    <span *ngIf="i==0">
+                        <img class="img-fluid" src="../../assets/web_development.jpg"  alt="">
+                    </span>
+                    <span *ngIf="i==1">
+                        <img class="img-fluid" src="../../assets/data_science.png" alt="">
+                    </span>
+                    <span *ngIf="i==2">
+                        <img class="img-fluid" src="../../assets/Ai_mlearning.jpg" alt="">
+                    </span>
+                    <span *ngIf="i==3">
+                        <img class="img-fluid" src="../../assets/python_logo.png" alt="">
+                    </span>
+                    <p class="fs-4 fw-bold lh-base">{{ course?.title }}</p>
+                    <p>{{ course?.description }}</p>
+                    <div fxLayoutAlign="space-between" class="d-flex">
                         <div>
-                            <p class="title_heading ">Our story started with a realization</p>
+                            <button class="btn btn-md bg-primary text-white">Enroll now</button>
                         </div>
-
-                        <div>
-                            <p class="title_description ">Career Redefine journey began with a simple idea: to bridge the gap between what traditional education offers and what the modern job market demands. Founded by a team of seasoned professionals with a shared vision, we set
-                                out to create a platform where learning, growth, and career advancement come together seamlessly.</p>
-                        </div>
-
-                        <!-- </div> -->
-                    </div>
-                    <div class="col-sm bg-white card_1" fxLayoutAlign="center center">
-                        <!-- <div> -->
-                        <div class="image">
-                            <img src="../../assets/career_redefine_ourstory_2.png " class="img-fluid " alt=" ">
-                        </div>
-
-                        <div>
-                            <p class="title_heading ">Evolving with the Industry</p>
-                        </div>
-                        <div>
-                            <p class="title_description ">We invite you to join us on this journey of career evolution in the digital era. As we continue to pioneer innovative solutions, expand our services, and adapt to new challenges, our vision remains constant: to empower you
-                                to evolve, excel, and achieve career success in the 21st century.
-                            </p>
-                        </div>
-                        <!-- </div> -->
-                    </div>
-                    <div class="col-sm bg-white card_1" fxLayoutAlign="center center">
-                        <!-- <div> -->
-                        <div class="image">
-                            <img src="../../assets/career_redefine_ourstory_3.png " class="img-fluid " alt=" ">
-                        </div>
-
-                        <div>
-                            <p class="title_heading ">Join Us on the Journey</p>
-                        </div>
-                        <div>
-                            <p class="title_description ">Over the years, Career Redefine has grown into a trusted partner for professionals and students alike. As the industry evolved, so did we—expanding our offerings to include cutting-edge courses in emerging technologies, comprehensive
-                                career enhancement programs, and specialized executive search services. Our commitment to staying ahead of the curve has enabled us to consistently deliver value and innovation to our clients.
-                            </p>
-                        </div>
-                        <!-- </div> -->
                     </div>
                 </div>
-            </div>
-
-
-        </div>
-
-        <!-- <div class="row ">
-            <div class="col-md-6 ">
-                <button mat-raised-button color="accent " class="w-100 hover-text ">Material Button</button>
-            </div>
-            <div class="col-md-6 ">
-                <button class="btn btn-primary w-100 hover-text ">Bootstrap
-                    Button</button>
             </div>
         </div> -->
-
-        <!-- Bootstrap Row with Material Card and Bootstrap Card -->
-        <!-- <footer></footer> -->
     </div>
-</div>
+</section>
+
+<section id="about">
+    <app-about-us></app-about-us>
+</section>

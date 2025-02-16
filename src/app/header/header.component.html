@@ -1,47 +1,71 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container" style="padding: 1rem;" fxLayoutAlign="space-around center">
-        <span class="ms-5">
-        <!-- <a class="navbar-brand" href="#">Career Redefine</a> -->
-         <img src="../../assets/Career-Redefine-Logo.png" width="50%" height="50%" alt="">
-       </span>
-
-        <span class="me-5">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active text-primary manrope" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link manrope" href="#">Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link manrope" href="#">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link manrope" href="#">Blogs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link manrope" href="#">Contact</a>
-            </li>
-            <li class="nav-item d-flex">
-                <a class="nav-link manrope" href="#">Login</a>
-                <!-- <mat-icon class="">arrow_right_alt</mat-icon> -->
-            </li>
-        </ul>
-
-      </span>
-        <!-- <div class="collapse navbar-collapse" fxLayoutAlign="space-between center" id="navbarText">
-
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-            </ul>
-        </div> -->
-    </div>
+<!-- <div class="col-12" style="position: fixed;"> -->
+<nav class="navbar navbar-expand-lg bg-light shadow col-12">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" routerLink="/">
+                <img src="../../assets/Career-Redefine-Logo.png" alt="Logo" style="width: 50%; height: 50%;">
+            </a>
+    
+            <!-- Navbar Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-end mt-2 " id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a mat-button class="nav-link" [routerLink]="['']" fragment="">Home</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a mat-button class="nav-link" [routerLink]="['/']" fragment="courses">Courses</a>
+                    </li>
+    
+                    <!-- About Dropdown -->
+                    <li class="nav-item dropdown" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
+                        <span mat-button class="nav-link d-flex align-items-center justify-content-between" href="#"
+                            id="aboutDropdown" (click)="toggleDropdown()">
+                            <a class="d-flex text-dark" style="text-decoration: none; font-weight: 400;">
+                                <p style="font-weight: 500;   font-size: 1.3rem;
+        letter-spacing: 0.01rem;">About</p>
+                                <p style="font-weight: 500;   font-size: 1.3rem;
+        letter-spacing: 0.01rem;"> <!-- Added margin to move the icon right -->
+                                    <mat-icon>{{ isDropdownOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+                                </p>
+                            </a>
+                        </span>
+    
+                        <ul class="dropdown-menu" [class.show]="isDropdownOpen">
+                            <li><a class="dropdown-item"  [routerLink]="['/']" fragment="about">Our Story</a></li>
+                            <li><a class="dropdown-item"  [routerLink]="['/']" fragment="about">Our Vision</a></li>
+                        </ul>
+                    </li>
+    
+    
+                    <li class="nav-item px-4">
+                        <a mat-button class="nav-link" routerLink="/services">Services</a>
+                    </li>
+                    <li class="nav-item pr-4">
+                        <a mat-button class="nav-link" [routerLink]="['/']" fragment="contact">Contact</a>
+                    </li>
+    
+                    <!-- Login Button -->
+                    <li class="nav-item" style="margin-left: 2rem;">
+                        <button mat-raised-button color="primary"  [routerLink]="['/login']" class="btn btn-dark">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
 </nav>
+<!-- </div> -->
+
+<!-- Side Navigation for Small Screens -->
+<!-- <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer mode="over" class="sidenav">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/dashboard">Dashboard</a>
+            <a mat-list-item>Login</a>
+            <a mat-list-item>Sign up</a>
+        </mat-nav-list>
+    </mat-sidenav>
+</mat-sidenav-container> -->

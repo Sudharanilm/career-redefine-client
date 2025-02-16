@@ -1,0 +1,18 @@
+node_modules/
+vendor/
+target/
+out/
+
+# Ignore build files
+dist/
+build/
+*.o
+*.so
+*.a
+*.obj
+*.exe
+*.dll
+
+# Ignore logs and temp files
+*.log
+*.tmp
